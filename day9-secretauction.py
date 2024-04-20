@@ -23,7 +23,7 @@ def winners(bid_dictionary, bid_repetition):
             names_of_max_bidders.append(bidder)
     
     if len(names_of_max_bidders) == 1:
-        print(f"The winner is {names_of_max_bidders[0].capitalize()}")
+        print(f"The winner is {names_of_max_bidders[0].capitalize()} with a bid of ${bid_dictionary[names_of_max_bidders[0]]:.2f}.")
     
     elif len(names_of_max_bidders) > 1:
         print(f"There was a tie, the auction should be repeated.")
