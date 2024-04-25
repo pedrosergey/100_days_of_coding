@@ -1,0 +1,1 @@
+print("Let's have a look how PyCharm works!")
