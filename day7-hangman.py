@@ -46,7 +46,10 @@ def check_input_letter(list_of_letters, redacted_list):
     letter = input("Please, guess a letter: ").lower()
     repetitions = list_of_letters.count(letter)
 
-    if repetitions == 0:
+    if letter in redacted_list:
+        print(f"You have already guessed {letter}.")
+
+    elif repetitions == 0:
         print(f"{letter} is not in the word!")
         return 0
 
