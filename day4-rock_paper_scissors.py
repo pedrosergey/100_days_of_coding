@@ -1,4 +1,4 @@
-from ascii_images import rock, paper, scissors
+from project_data.ascii_images import rock, paper, scissors
 import random
 
 computer_choice = random.randint(0,2)
