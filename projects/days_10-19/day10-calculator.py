@@ -1,6 +1,6 @@
 # import the main logo and the os libraty to use the clear function
 
-from ascii_images import day10_logo
+from data.ascii_images import day10_logo
 import os
 
 # create the different operations 

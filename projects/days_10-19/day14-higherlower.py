@@ -2,8 +2,8 @@
 
 import random
 import os
-from project_data.day14_data import data
-from project_data.ascii_images import day14_vs as vs, day14_logo as logo
+from data.day14_data import data
+from data.ascii_images import day14_vs as vs, day14_logo as logo
 
 # define the function to pick a name from the list and return it
 
@@ -18,7 +18,7 @@ def pick_a_name(data_list):
 def comparison(data, person_a, person_b):
     """Perform a comparison between two people"""
 
-    print(f"Compare A: {person_a['name']}, a {person_a['description']} from {person_a['country']}.")
+    print(f"\nCompare A: {person_a['name']}, a {person_a['description']} from {person_a['country']}.")
     print(vs)
     print(f"Against B: {person_b['name']}, a {person_b['description']} from {person_b['country']}.")
 
@@ -43,10 +43,11 @@ def comparison(data, person_a, person_b):
 print(logo, "\nWelcome to this guessing game!")
 
 
-
 # start the game
 
 def play_comparison():
+
+    score = 0
 
     person_a = pick_a_name(data)
     person_b = pick_a_name(data)
@@ -55,16 +56,19 @@ def play_comparison():
     data.remove(person_b)
 
     result = comparison(data, person_a, person_b)
-
+    print(f"Your current score is: {score}")
+    
     while result != "c":
         person_b = pick_a_name(data)
         data.remove(person_b)
         result = comparison(data, result, person_b)
+        print(f"Your current score is: {score}")
 
     if result == "c":
         print("You have lost!")
 
-    play_again = input("Do you want to play again? Type 'y' or 'n': ").lower()
+    print(f"Your final score was: {score}")
+    play_again = input("\nDo you want to play again? Type 'y' or 'n': ").lower()
 
     if play_again == 'y':
         os.system('CLS')

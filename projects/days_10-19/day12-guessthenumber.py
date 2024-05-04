@@ -1,4 +1,4 @@
-from project_data.ascii_images import day12_logo
+from data.ascii_images import day12_logo
 import random
 import os
 

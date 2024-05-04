@@ -1,9 +1,9 @@
 # import the necessary libraries
 
 import random
-from project_data.day_7.day7_data import stages
-from project_data.day_7.day7_words import word_list as words_battery
-from project_data.ascii_images import day7_logo
+from data.day7_data import stages
+from data.day7_words import word_list as words_battery
+from data.ascii_images import day7_logo
 
 
 # create some functions that we will use later on
