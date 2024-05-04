@@ -12,7 +12,7 @@
 
 # import some libraries
 
-from project_data.ascii_images import day11_logo
+from data.ascii_images import day11_logo
 import random
 import os
 

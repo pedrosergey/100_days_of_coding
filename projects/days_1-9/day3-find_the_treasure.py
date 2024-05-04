@@ -1,4 +1,4 @@
-from ascii_images import day3_logo
+from data.ascii_images import day3_logo
 
 print(day3_logo)
 

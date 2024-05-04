@@ -1,9 +1,9 @@
 # import the necessary libraries
 
 import random
-from project_data.day7_data import stages
-from project_data.day7_words import word_list as words_battery
-from project_data.ascii_images import day7_logo
+from data.day7_data import stages
+from data.day7_words import word_list as words_battery
+from data.ascii_images import day7_logo
 
 
 # create some functions that we will use later on
@@ -72,6 +72,7 @@ def hangman():
     # define some variables
 
     random_word = random.choice(words_battery)
+
     redacted_word = redact_word(random_word)
     word_in_list = transform_word_in_list(random_word)
     lives = len(stages)

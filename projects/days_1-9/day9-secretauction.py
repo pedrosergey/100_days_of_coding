@@ -1,6 +1,6 @@
 # import some libraries
 
-from ascii_images import day9_logo
+from data.ascii_images import day9_logo
 import os
 
 # create a function to add new bids to the dictionary
