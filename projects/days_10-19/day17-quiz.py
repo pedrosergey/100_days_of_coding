@@ -1,8 +1,8 @@
 # import the questions
 
-from project_data.day_17.question_bank import question_data
-from project_data.day_17.classes import QuizBrain, Question
-from project_data.ascii_images import day17_logo
+from data.day17_questionbank import question_data
+from data.day17_classes import QuizBrain, Question
+from data.ascii_images import day17_logo
 import random as r
 
 
@@ -12,10 +12,10 @@ list_of_questions_objects = []
 
 for question in question_data:
 
-    question_to_add = Question(question["text"], question["answer"])
+    question_to_add = Question(question["question"], question["correct_answer"])
     list_of_questions_objects.append(question_to_add)
 
-
+r.shuffle(list_of_questions_objects)
 # # start the game
 
 print(day17_logo)

@@ -53,8 +53,8 @@ while keep_playing == "y":
         player_lost = True
 
     while keep_drawing:
-        print(f"Dealers hand: [{dealer_hand[0]}, *]")
-        print(f"Your hand: {player_hand}")
+        print(f"Dealers hand: [{dealer_hand[0]}, *]. Dealer has {sum(dealer_hand)}.")
+        print(f"Your hand: {player_hand}. You have {sum(player_hand)}.")
 
         draw_a_card = input("Do you want to draw another card? Type 'y' or 'n': ").lower()
 

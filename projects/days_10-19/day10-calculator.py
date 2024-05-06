@@ -1,4 +1,4 @@
-# import the main logo and the os libraty to use the clear function
+# import the main logo and the os library to use the clear function
 
 from data.ascii_images import day10_logo
 import os

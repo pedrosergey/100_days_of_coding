@@ -12,26 +12,64 @@ import colorgram
 
 pencil = Turtle()
 canvas = Screen()
+pencil.speed(100)
 
 # configure the pencil and the canvas
 
-canvas.screensize(350, 350)
-
-
+canvas.setup(450, 450)
 turtle.colormode(255)
 
+# get the colour from the image that we chose
 
-def random_color():
-    r = random.randint(1, 255)
-    g = random.randint(1, 255)
-    b = random.randint(1, 255)
+color_palette = colorgram.extract("data/day18_colours.jpg", 8)
+
+
+# create the function that will chose the colours
+
+def choose_color(colours):
+    random_colour = random.choice(colours)
+    r = random_colour.rgb[0]
+    g = random_colour.rgb[1]
+    b = random_colour.rgb[2]
 
     rgb = (r, g, b)
 
-    return rgb
+    return (rgb)
 
 
+# configure until where do we want to pain
 
-# configure the screen to exit on click
+max_x = canvas.window_width() / 2 - 15
+max_y = canvas.window_height() / 2 - 30
+min_x = -(canvas.window_width() / 2) + 25
+min_y = -(canvas.window_height() / 2) + 30
+
+# configure the painting
+
+pencil.pensize(15)
+pencil.penup()
+pencil.goto(min_x, min_y)
+
+# create loop to paint
+
+keep_painting = True
+
+while keep_painting:
+
+    pencil.color(choose_color(color_palette))
+    pencil.pendown()
+    pencil.fd(0.01)
+    pencil.penup()
+
+    pencil.fd(40)
+    print(pencil.pos())
+
+    if pencil.pos()[0] > max_x and pencil.pos()[1] > max_y:
+        pencil.fd(50)
+        keep_painting = False
+
+    elif pencil.pos()[0] > max_x:
+        min_y = min_y + 40
+        pencil.goto(min_x, min_y)
 
 canvas.exitonclick()

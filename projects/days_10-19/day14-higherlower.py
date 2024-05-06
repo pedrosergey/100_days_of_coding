@@ -15,8 +15,9 @@ def pick_a_name(data_list):
 
     return random_person
 
-def comparison(data, person_a, person_b):
+def comparison(data, person_a, person_b, score):
     """Perform a comparison between two people"""
+    print(f"Your current score is: {score}")
 
     print(f"\nCompare A: {person_a['name']}, a {person_a['description']} from {person_a['country']}.")
     print(vs)
@@ -55,24 +56,26 @@ def play_comparison():
     data.remove(person_a)
     data.remove(person_b)
 
-    result = comparison(data, person_a, person_b)
-    print(f"Your current score is: {score}")
-    
+    result = comparison(data, person_a, person_b, score)
+
     while result != "c":
+        score += 1
+        person_a = person_b
         person_b = pick_a_name(data)
         data.remove(person_b)
-        result = comparison(data, result, person_b)
-        print(f"Your current score is: {score}")
+        result = comparison(data, person_a, person_b, score)
 
     if result == "c":
         print("You have lost!")
 
-    print(f"Your final score was: {score}")
+    print(f"\nYour final score was {score}!")
     play_again = input("\nDo you want to play again? Type 'y' or 'n': ").lower()
 
     if play_again == 'y':
-        os.system('CLS')
+        os.system('clear')
         play_comparison()
 
+
 play_comparison()
+
 print("Thanks for having fun with us! See you next time <|3")
