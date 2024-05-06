@@ -56,10 +56,7 @@ keep_painting = True
 
 while keep_painting:
 
-    pencil.color(choose_color(color_palette))
-    pencil.pendown()
-    pencil.fd(0.01)
-    pencil.penup()
+    pencil.dot(20, choose_color(color_palette))
 
     pencil.fd(40)
     print(pencil.pos())
