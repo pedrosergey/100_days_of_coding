@@ -75,6 +75,7 @@ def make_coffe():
 
     if chosen_flavour == "report":
         report()
+        return True
     elif chosen_flavour == "off":
         print("Have a great day ahead 🌻! :)")
         return False
@@ -84,6 +85,7 @@ def make_coffe():
 
         if not resources_checker(chosen_flavour):
             print("Sorry, there are not sufficient resources to make your coffee.")
+            return True
 
         else:
 
@@ -92,6 +94,7 @@ def make_coffe():
 
             if inserted_coins < coffee_price:
                 print(f"Sorry, that is not enough money. ${inserted_coins} refunded.")
+                return True
             else:
                 if inserted_coins == coffee_price:
                     print("You introduced the exact amount. No change for you!")
@@ -100,6 +103,7 @@ def make_coffe():
 
                 update_machine(chosen_flavour)
                 print(f"Here you have your {chosen_flavour}. Enjoy it! ☕")
+                return True
 
 
 machine_status = True
