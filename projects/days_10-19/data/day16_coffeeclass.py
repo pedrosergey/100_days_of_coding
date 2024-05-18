@@ -30,7 +30,6 @@ class CoffeeMachine:
         for key, value in flavours[coffee_flavour].items():
             current_value = getattr(self, key, 0)
             if key == "price":
-                setattr(self, key, current_value + value)
+                setattr(self, "money", current_value + value)
             else:
-                current_value = getattr(self, key)
                 setattr(self, key, current_value - value)
