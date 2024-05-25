@@ -1,0 +1,37 @@
+#img{
+    width: 500px;
+    border: 3px solid yellow;
+    margin: 10px 0;
+}
+
+html{
+    background-color: black;
+}
+
+div{
+    width: 526px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+#title{
+    color: plum;
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    font-size: 55pt;
+    text-align: center;
+    margin: 0px;
+    text-transform:uppercase;
+    }
+
+#motivation {
+    font-size: 14pt;
+    margin: 10px 0; /* Margen arriba y abajo */
+    color: paleturquoise;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    }
+
